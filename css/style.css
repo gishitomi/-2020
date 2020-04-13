@@ -38,7 +38,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: black;
+    background-color: white;
     transition: all .5s;
     border-radius: 5px;
     z-index: 20;
@@ -96,9 +96,9 @@ main h2 {
 }
 
 .container {
+    padding-top: 50px;
     width: 88%;
     height: 1000px;
-    background-color: black;
     margin: 0 auto;
     display: flex;
 }
@@ -106,11 +106,37 @@ main h2 {
 .left-box {
     width: 50%;
     height: 100%;
-    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-box img {
+    width: 100%;
+    /* height: 70%; */
+}
+
+.catch-copy {
+    font-size: 40px;
+    height: 30%;
+    margin: 50px;
 }
 
 .right-box {
     width: 50%;
     height: 100%;
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    font-size: 20px;
+    line-height: 35px;
+    height: 60%;
+    margin: 0 40px
+}
+
+.right-box img {
+    width: 100%;
+    height: 40%;
 }
