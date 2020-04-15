@@ -29,6 +29,36 @@ $(function() {
             $('#index').removeClass('open');
         }
     });
+    $(window).scroll(function() {
+        let windowHeight = $(window).height();
+        $('#text').each(function() {
+            let scroll = $(window).scrollTop();
+            let textTop = $(this).offset().top;
+            // console.log(textTop);
+            if (scroll > textTop - windowHeight / 2) {
+                $('#text').css('opacity', '1');
+                $('.left-box img').addClass('move');
+            } else {
+                $('#text').css('opacity', '0');
+                $('.left-box img').removeClass('move');
+
+            }
+        });
+
+        $('.catch-copy').each(function() {
+            let scroll = $(window).scrollTop();
+            let textTop = $(this).offset().top;
+            // console.log(textTop);
+            if (scroll > textTop - windowHeight / 1.5) {
+                $('.catch-copy').css('opacity', '1');
+                $('.right-box img').addClass('move');
+            } else {
+                $('.catch-copy').css('opacity', '0');
+                $('.right-box img').removeClass('move');
+
+            }
+        });
+    });
 
 
 });
