@@ -52,9 +52,12 @@ $(function() {
             if (scroll > textTop - windowHeight / 1.5) {
                 $('.catch-copy').css('opacity', '1');
                 $('.right-box img').addClass('move');
+                $('.catch-copy').addClass('move');
             } else {
                 $('.catch-copy').css('opacity', '0');
                 $('.right-box img').removeClass('move');
+                $('.catch-copy').removeClass('move');
+
 
             }
         });

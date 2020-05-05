@@ -1,0 +1,35 @@
+@charset "UTF-8";
+header {
+    width: 80%;
+    height: 180px;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    position: relative;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.top-page-wrapper {
+    display: flex;
+    position: absolute;
+    top: 30px;
+}
+
+.top-page-img img {
+    width: 60px;
+    height: 60px;
+}
+
+.header-list {
+    width: 70%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ham span {
+    background-color: black;
+}
