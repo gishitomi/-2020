@@ -1,7 +1,20 @@
 @charset "UTF-8";
+.main-page-wrapper {
+    height: 150px;
+    width: 100%;
+    background: url('../img/luxury-3115234_1920.jpg');
+    background-size: cover;
+    background-position: top;
+    position: fixed;
+}
+
+.main-page {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 header {
-    width: 80%;
-    height: 180px;
+    width: 100%;
+    height: 150px;
     background-color: whitesmoke;
     margin: 0 auto;
     position: relative;
@@ -9,27 +22,69 @@ header {
 
 header a {
     text-decoration: none;
+    color: white;
 }
 
 .top-page-wrapper {
     display: flex;
     position: absolute;
     top: 30px;
+    left: 8%;
 }
 
 .top-page-img img {
-    width: 60px;
+    width: 80px;
     height: 60px;
+    margin-right: 20px;
+}
+
+.top-page {
+    font-size: 20px;
 }
 
 .header-list {
     width: 70%;
     position: absolute;
-    bottom: 0;
+    bottom: 15px;
+    left: 20%;
     display: flex;
     justify-content: space-around;
 }
 
+.header-list li {
+    font-size: 20px;
+    position: relative;
+}
+
 .ham span {
-    background-color: black;
+    background-color: white;
+}
+
+.border::after {
+    transition: all 0.5s;
+    transform: scale(0, 1);
+    transform-origin: left;
+    background-color: white;
+    content: '';
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.border:hover::after {
+    transform: scale(1, 1);
+}
+
+.header-text {
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    left: 40%;
+    top: 25%;
+}
+
+.time {
+    color: white;
 }

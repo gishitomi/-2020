@@ -10,37 +10,72 @@
     <link rel="stylesheet" href="./css/drawermenu.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./north.css">
+    <link rel="stylesheet" href="./css/north.css">
 </head>
 
 <body>
-    <header>
-        <div class="top-page-wrapper">
-            <a href="./index.html">
-                <div class="top-page-img">
-                    <img src="./img/hibiscus-787030_1280.jpg" alt="">
+    <div id="header">
+        <div v-bind:class="mainPageWrapper">
+            <header v-bind:class="mainPage">
+                <div class="top-page-wrapper">
+                    <a href="./index.html">
+                        <div class="top-page-img">
+                            <img src="./img/hibiscus-787030_1280.jpg" alt="">
+                        </div>
+                    </a>
+                    <div class="top-page">
+                        <a href="./index.html">
+                            <p>地元民が選ぶ</p>
+                            <h1>オススメスポット</h1>
+                            <p>沖縄の紹介サイト</p>
+                        </a>
+                    </div>
                 </div>
-            </a>
-            <div class="top-page">
-                <a href="./index.html">
-                    <p>地元民が選ぶ</p>
-                    <h1>オススメスポット</h1>
-                    <p>沖縄の紹介サイト</p>
-                </a>
-            </div>
+                <ul class="header-list">
+                    <li v-bind:class="border"><a href="./index.html">TOP</a></li>
+                    <li v-bind:class="border"><a href="./north.html">北部</a></li>
+                    <li v-bind:class="border"><a href="./center.html">中部</a></li>
+                    <li v-bind:class="border"><a href="./south.html">南部</a></li>
+                    <li v-bind:class="border"><a href="https://shotagishitomi-portfolio-site.herokuapp.com/">ShotaGishitomi</a></li>
+
+                </ul>
+                <!-- <p v-bind:class="text">ここに時間ごとの挨拶をいれる</p> -->
+                <p v-bind:class="text" v-if="time >= 18">
+                    {{evening}}、見てくれてありがとうございます
+                </p>
+                <p v-bind:class="text" v-else-if="time >= 12">
+                    {{afternoon}}、見てくれてありがとうございます
+                </p>
+                <p v-bind:class="text" v-else-if="time >= 6">
+                    {{morning}}。見てくれてありがとうございます
+                </p>
+                <p v-bind:class="text" v-else>
+                    {{evening}}、見てくれてありがとうございます
+                </p>
+            </header>
         </div>
-        <ul class="header-list">
-            <li><a href="./index.html">TOP</a></li>
-            <li><a href="./north.html">北部</a></li>
-            <li><a href="./center.html">中部</a></li>
-            <li><a href="./south.html">南部</a></li>
-            <li><a href="https://shotagishitomi-portfolio-site.herokuapp.com/">ShotaGishitomi</a></li>
-
-        </ul>
-    </header>
-    <div id="north">
-
     </div>
+    <main id="main">
+        <div class="place">
+            <h1>Place</h1>
+            <button v-on:click="changeText(nagoTxt)">名護市</button>
+            <button v-on:click="changeText(motobuTxt)">本部町</button>
+            <button v-on:click="changeText(nakizinTxt)">今帰仁村</button>
+            <div id="message">
+                {{text}}
+            </div>
+
+        </div>
+        <div class="spot">
+            <h1>Recommended spots</h1>
+            <h2><a href="http://oisi-okashi.com/">りんごカフェ(カフェ)</a></h2>
+            <p>沖縄の北部の離れ島、瀬底島という場所にあるカフェです。建物も赤瓦が使われており、沖縄らしい雰囲気が味わえます。なので観光スポットとしてもオススメです。焼き菓子をメインに扱っていて、中でも特に力を入れてるなと感じるところはマカロンですね。種類が豊富で、沖縄の塩を使った塩キャラメルなど、マカロンも沖縄らしさが詰め込まれています。泡盛やさんぴん茶など、味の想像が全然つかないマカロンもあるので、気になるところです。
+            </p>
+
+        </div>
+
+        <h1>APIで記事の取得</h1>
+    </main>
     <div class="ham">
         <span></span>
         <span></span>
@@ -59,8 +94,10 @@
     </footer>
     <div class="overlay"></div>
     <script src="./js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="./js/jquery.ripples-min.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/vue-app.js"></script>
 </body>
 
 </html>

@@ -57,8 +57,6 @@ $(function() {
                 $('.catch-copy').css('opacity', '0');
                 $('.right-box img').removeClass('move');
                 $('.catch-copy').removeClass('move');
-
-
             }
         });
     });

@@ -1,1 +1,12 @@
 @charset "UTF-8";
+main {
+    width: 80%;
+    margin: 0 auto;
+    /* margin-top: 150px; */
+    padding-top: 180px;
+}
+
+.place,
+.spot {
+    height: 100vh;
+}
