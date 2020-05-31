@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/drawermenu.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/north.css">
+    <link rel="stylesheet" href="./css/area.css">
 </head>
 
 <body>
@@ -57,24 +57,24 @@
     </div>
     <main id="main">
         <div class="place">
-            <h1>Place</h1>
-            <button v-on:click="changeText(nagoTxt)">名護市</button>
-            <button v-on:click="changeText(motobuTxt)">本部町</button>
-            <button v-on:click="changeText(nakizinTxt)">今帰仁村</button>
-            <div id="message">
+            <h1 v-bind:class="headLine">Place</h1>
+            <a href="#" class="btn-animation-02" v-on:click="changeText(nagoTxt)"><span>名護市<span></a>
+            <a href="#" class="btn-animation-02" v-on:click="changeText(motobuTxt)"><span>本部町<span></a>
+            <a href="#" class="btn-animation-02" v-on:click="changeText(nakizinTxt)"><span>今帰仁村<span></a>
+            <div v-bind:class="crossingLine">
                 {{text}}
             </div>
-
         </div>
         <div class="spot">
-            <h1>Recommended spots</h1>
-            <h2><a href="http://oisi-okashi.com/">りんごカフェ(カフェ)</a></h2>
+            <h1 v-bind:class="headLine">Recommended spots</h1>
+            <h2 v-bind:class="subHeading"><a href="http://oisi-okashi.com/">りんごカフェ(カフェ)</a></h2>
             <p>沖縄の北部の離れ島、瀬底島という場所にあるカフェです。建物も赤瓦が使われており、沖縄らしい雰囲気が味わえます。なので観光スポットとしてもオススメです。焼き菓子をメインに扱っていて、中でも特に力を入れてるなと感じるところはマカロンですね。種類が豊富で、沖縄の塩を使った塩キャラメルなど、マカロンも沖縄らしさが詰め込まれています。泡盛やさんぴん茶など、味の想像が全然つかないマカロンもあるので、気になるところです。
             </p>
 
         </div>
-
-        <h1>APIで記事の取得</h1>
+        <div class="acquisition">
+            <h1 v-bind:class="headLine">Acquisition by API(APIで記事の取得)</h1>
+        </div>
     </main>
     <div class="ham">
         <span></span>

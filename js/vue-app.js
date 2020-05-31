@@ -18,7 +18,10 @@ var mainApp = new Vue({
         nagoTxt: '名護のテキスト',
         motobuTxt: '本部町のテキスト',
         nakizinTxt: '今帰仁のテキスト',
-        text: ''
+        text: '',
+        headLine: 'headline',
+        crossingLine: 'crossing-line',
+        subHeading: 'sub-heading'
     },
     methods: {
         changeText: function(txt) {

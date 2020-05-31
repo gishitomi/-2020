@@ -6,6 +6,7 @@
     background-size: cover;
     background-position: top;
     position: fixed;
+    z-index: 999;
 }
 
 .main-page {
@@ -61,7 +62,7 @@ header a {
 }
 
 .border::after {
-    transition: all 0.5s;
+    transition: all 0.3s;
     transform: scale(0, 1);
     transform-origin: left;
     background-color: white;
