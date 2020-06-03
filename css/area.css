@@ -6,11 +6,23 @@ main {
     padding-top: 180px;
 }
 
-.place,
-.spot,
-.acquisition {
-    height: 600px;
+.place {
+    height: 300px;
     margin: 30px 0;
+}
+
+.acquisition {
+    height: 800px;
+    margin: 30px 0;
+}
+
+.img-wrapper {
+    margin: 30px auto;
+    width: 70%;
+}
+
+.img-wrapper img {
+    width: 100%;
 }
 
 .headline {
@@ -149,3 +161,30 @@ main {
 
 
 /* 見出し終了 */
+
+
+/* pタグ文字テキスト */
+
+.blog-text {
+    font-size: 17px;
+    line-height: normal;
+    margin: 30px;
+}
+
+
+/* pタグ文字テキスト終了 */
+
+
+/* もっと見るボタン */
+
+.see-more {
+    left: 18%;
+    width: 60%;
+}
+
+.see-more span {
+    font-size: 20px;
+}
+
+
+/* もっと見るボタン終了 */

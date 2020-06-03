@@ -58,18 +58,40 @@
     <main id="main">
         <div class="place">
             <h1 v-bind:class="headLine">Place</h1>
-            <a href="#" class="btn-animation-02" v-on:click="changeText(nagoTxt)"><span>名護市<span></a>
-            <a href="#" class="btn-animation-02" v-on:click="changeText(motobuTxt)"><span>本部町<span></a>
-            <a href="#" class="btn-animation-02" v-on:click="changeText(nakizinTxt)"><span>今帰仁村<span></a>
+
+            <button class="btn-animation-02" v-on:click="changeText(nagoTxt)"><span>名護市<span></button>
+            <button class="btn-animation-02" v-on:click="changeText(motobuTxt)"><span>本部町<span></button>
+            <button class="btn-animation-02" v-on:click="changeText(nakizinTxt)"><span>今帰仁村<span></button>
             <div v-bind:class="crossingLine">
                 {{text}}
             </div>
+            <!-- <div v-bind:class="crossingLine" v-if="text == nagoTxt">
+                なごっち{{text}}
+            </div> -->
         </div>
         <div class="spot">
             <h1 v-bind:class="headLine">Recommended spots</h1>
-            <h2 v-bind:class="subHeading"><a href="http://oisi-okashi.com/">りんごカフェ(カフェ)</a></h2>
-            <p>沖縄の北部の離れ島、瀬底島という場所にあるカフェです。建物も赤瓦が使われており、沖縄らしい雰囲気が味わえます。なので観光スポットとしてもオススメです。焼き菓子をメインに扱っていて、中でも特に力を入れてるなと感じるところはマカロンですね。種類が豊富で、沖縄の塩を使った塩キャラメルなど、マカロンも沖縄らしさが詰め込まれています。泡盛やさんぴん茶など、味の想像が全然つかないマカロンもあるので、気になるところです。
+            <h2 v-bind:class="subHeading"><a href="http://oisi-okashi.com/" target="_blank">りんごカフェ(カフェ)</a></h2>
+            <div class="img-wrapper">
+                <img src="./img/colorful-1835921_1920.jpg" alt="">
+            </div>
+            <p v-bind:class="blogText">沖縄の北部の離れ島、瀬底島という場所にあるカフェです。建物も赤瓦が使われており、沖縄らしい雰囲気が味わえます。なので観光スポットとしてもオススメです。焼き菓子をメインに扱っていて、中でも特に力を入れてるなと感じるところはマカロンですね。種類が豊富で、沖縄の塩を使った塩キャラメルなど、マカロンも沖縄らしさが詰め込まれています。泡盛やさんぴん茶など、味の想像が全然つかないマカロンもあるので、気になるところです。
             </p>
+            <div v-for="listItem in listItems">
+                <div class="menu">
+                    <h2 v-bind:class="subHeading"><a v-bind:href="listItem.url" target="_blank">
+                        {{listItem.title}}
+                    </a></h2>
+                    <div class="img-wrapper">
+                        <img v-bind:src="listItem.thumbnailSrc" alt="">
+                    </div>
+                    <p v-bind:class="blogText">
+                        {{listItem.text}}
+                    </p>
+                </div>
+            </div>
+
+            <button class="btn-animation-02" v-bind:class="seeMore" v-on:click="isMore()" v-if="(listItems.length - count) >=0"><span>もっと見る</span></button>
 
         </div>
         <div class="acquisition">
