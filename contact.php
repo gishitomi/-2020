@@ -1,3 +1,12 @@
+<?php 
+//フォームボタンを押した時
+if(isset($_POST["register"])) {
+    //エラーメッセージを格納する配列を作成
+    
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -36,7 +45,7 @@
                     <li v-bind:class="border"><a href="./north.html">北部</a></li>
                     <li v-bind:class="border"><a href="./center.html">中部</a></li>
                     <li v-bind:class="border"><a href="./south.html">南部</a></li>
-                    <li v-bind:class="border"><a href="./contact.html">お問い合わせ</a></li>
+                    <li v-bind:class="border"><a href="./contact.php">お問い合わせ</a></li>
                 </ul>
                 <p v-bind:class="text" v-if="time >= 18">
                     {{evening}}、見てくれてありがとうございます
@@ -72,7 +81,7 @@
         <p>
             このWebサイトについて、または私について何かお聞きしたいことがありましたら、こちらからお願いいたします。
         </p>
-        <form action="#" method="POST">
+        <form action="check.php" method="POST">
             <table>
                 <tr>
                     <td class="user-label">名前</td>
@@ -96,7 +105,7 @@
                     </td>
                 </tr>
             </table>
-            <button class="btn-flat-border" type="submit">入力内容の確認画面へ</button>
+            <button class="btn-flat-border" name="register" type="submit">入力内容の確認画面へ</button>
         </form>
     </div>
     <footer>
