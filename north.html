@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/area.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,10 +37,8 @@
                     <li v-bind:class="border"><a href="./north.html">北部</a></li>
                     <li v-bind:class="border"><a href="./center.html">中部</a></li>
                     <li v-bind:class="border"><a href="./south.html">南部</a></li>
-                    <li v-bind:class="border"><a href="https://shotagishitomi-portfolio-site.herokuapp.com/">ShotaGishitomi</a></li>
-
+                    <li v-bind:class="border"><a href="./contact.html">お問い合わせ</a></li>
                 </ul>
-                <!-- <p v-bind:class="text">ここに時間ごとの挨拶をいれる</p> -->
                 <p v-bind:class="text" v-if="time >= 18">
                     {{evening}}、見てくれてありがとうございます
                 </p>
@@ -62,21 +61,13 @@
             <button class="btn-animation-02" v-on:click="changeText(nagoTxt)"><span>名護市<span></button>
             <button class="btn-animation-02" v-on:click="changeText(motobuTxt)"><span>本部町<span></button>
             <button class="btn-animation-02" v-on:click="changeText(nakizinTxt)"><span>今帰仁村<span></button>
-            <div v-bind:class="crossingLine">
+            <div>
                 {{text}}
             </div>
-            <!-- <div v-bind:class="crossingLine" v-if="text == nagoTxt">
-                なごっち{{text}}
-            </div> -->
         </div>
         <div class="spot">
             <h1 v-bind:class="headLine">Recommended spots</h1>
-            <h2 v-bind:class="subHeading"><a href="http://oisi-okashi.com/" target="_blank">りんごカフェ(カフェ)</a></h2>
-            <div class="img-wrapper">
-                <img src="./img/colorful-1835921_1920.jpg" alt="">
-            </div>
-            <p v-bind:class="blogText">沖縄の北部の離れ島、瀬底島という場所にあるカフェです。建物も赤瓦が使われており、沖縄らしい雰囲気が味わえます。なので観光スポットとしてもオススメです。焼き菓子をメインに扱っていて、中でも特に力を入れてるなと感じるところはマカロンですね。種類が豊富で、沖縄の塩を使った塩キャラメルなど、マカロンも沖縄らしさが詰め込まれています。泡盛やさんぴん茶など、味の想像が全然つかないマカロンもあるので、気になるところです。
-            </p>
+
             <div v-for="listItem in listItems">
                 <div class="menu">
                     <h2 v-bind:class="subHeading"><a v-bind:href="listItem.url" target="_blank">
@@ -112,7 +103,49 @@
         </ul>
     </nav>
     <footer>
-        <p>©︎Shota Gishitommi</p>
+        <div class="profile">
+            <div class="img-wrapper">
+                <img src="./img/IMG_3755 3.jpeg" alt="">
+                <div class="icons">
+                    <a href="#"><i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="#"> <i class="fab fa-facebook-f fa-2x"></i></a>
+                </div>
+            </div>
+            <article>
+                <h5>Shota Gishotomi</h5>
+                <p>フロントエンドを現在勉強中</p>
+            </article>
+        </div>
+        <div class="category">
+            <ul class="blogs">
+
+                <h3>BLOG</h3>
+                <a href="https://qiita.com/gishitomi" target="_blank">
+                    <li>Qiita</li>
+                </a>
+                <a href="https://note.com/gisho1140" target="_blank">
+                    <li>note</li>
+                </a>
+                <a href="https://shotagishitomi-portfolio-site.herokuapp.com/" target="_blank">
+                    <li>About me</li>
+                </a>
+            </ul>
+            <div class="line"></div>
+            <ul class="blogs">
+                <h3>Doing</h3>
+                <a href="" target="_blank">
+                    <li>
+                        machine learning
+                    </li>
+                </a>
+                <a href="https://shotagishitomi-portfolio-site.herokuapp.com/portfolio.php" target="_blank">
+                    <li>programing</li>
+                </a>
+
+            </ul>
+        </div>
     </footer>
     <div class="overlay"></div>
     <script src="./js/jquery.js"></script>

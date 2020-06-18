@@ -1,0 +1,77 @@
+@charset "UTF-8";
+.contact-form {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 180px;
+    height: 700px;
+    position: relative;
+}
+
+.contact-form h1 {
+    font-size: 30px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.contact-form p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.user-data p {
+    font-size: 13px;
+    width: 50%;
+    text-align: start;
+    margin: 0 auto;
+    color: rgb(0, 87, 0);
+}
+
+table {
+    border-collapse: collapse;
+    margin: 50px auto;
+    width: 100%;
+}
+
+td {
+    border: solid 1px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td.user-data {
+    padding: 1.0em;
+}
+
+.user-data input {
+    width: 50%;
+    height: 30px;
+}
+
+.contact-form button {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+}
+
+
+/* 送信ボタンデザイン */
+
+.btn-flat-border {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #15921b;
+    border: solid 2px #15921b;
+    border-radius: 3px;
+    transition: .4s;
+    background: white;
+}
+
+.btn-flat-border:hover {
+    background: #15921b;
+    color: white;
+}
+
+
+/* 送信ボタンデザイン終了 */
