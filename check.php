@@ -22,7 +22,7 @@ if ($user_name == '') {
 if ($e_mail == '') {
     $e_mail_text = 'メールアドレスが未記入です。';
 }
-if ($massage == '') {
+if ($message == '') {
     $message_text = 'お問い合わせ内容が未記入です。';
 }
 

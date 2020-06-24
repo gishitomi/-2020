@@ -1,8 +1,19 @@
-<?php 
+<?php
 //フォームボタンを押した時
-if(isset($_POST["register"])) {
+if (isset($_POST["register"])) {
     //エラーメッセージを格納する配列を作成
-    
+    $error_message = array();
+    //名前を保持
+    $user_name = $_POST['user-name'];
+    //メールアドレス
+    $e_mail = $_POST['e-mail'];
+    //お問い合わせ内容
+    $message = $_POST['message'];
+    if ($user_name === "") {
+        $error_message[] = "お名前を入力してください<br>";
+    } else {
+        $user_name = htmlspecialchars($user_name, ENT_QUOTES);
+    }
 }
 ?>
 
@@ -62,7 +73,6 @@ if(isset($_POST["register"])) {
             </header>
         </div>
     </div>
-
     <div class="ham">
         <span></span>
         <span></span>
@@ -76,19 +86,19 @@ if(isset($_POST["register"])) {
             <li><a href="south.html">南部</a></li>
         </ul>
     </nav>
-    <div class="contact-form">
+    <div class="contact-form" id="contact">
         <h1>Contact form</h1>
         <p>
             このWebサイトについて、または私について何かお聞きしたいことがありましたら、こちらからお願いいたします。
         </p>
-        <form action="check.php" method="POST">
+        <form v-on:submit="checkError" action="check.php" method="POST">
             <table>
                 <tr>
-                    <td class="user-label">名前</td>
+                    <td class="user-label"><label for="user-name">名前</label></td>
                     <td class="user-data"><input type="text" id="user-name" name="user-name" placeholder="名前を入力してください"></td>
                 </tr>
                 <tr>
-                    <td class="user-label">メールアドレス</td>
+                    <td class="user-label"><label for="e-mail">メールアドレス</label></td>
                     <td class="user-data">
                         <input type="text" id="e-mail" name="e-mail" placeholder="例) abc@okinawa.co.jp">
                         <br><br>
@@ -99,7 +109,7 @@ if(isset($_POST["register"])) {
                     </td>
                 </tr>
                 <tr>
-                    <td class="user-label">お問い合わせ内容</td>
+                    <td class="user-label"><label for="message">お問い合わせ内容</label></td>
                     <td class="user-data">
                         <textarea name="message" id="message" cols="70" rows="10"></textarea>
                     </td>
@@ -107,6 +117,12 @@ if(isset($_POST["register"])) {
             </table>
             <button class="btn-flat-border" name="register" type="submit">入力内容の確認画面へ</button>
         </form>
+        <div>
+            <br><br>
+            {{$data}}
+            <br>
+            {{errorCounters.length}}
+        </div>
     </div>
     <footer>
         <div class="profile">
@@ -154,9 +170,12 @@ if(isset($_POST["register"])) {
         </div>
     </footer>
     <div class="overlay"></div>
-
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.ripples-min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="./js/app.js"></script>
     <script src="./js/vue-app.js"></script>
+    <script src="./js/contact.js"></script>
 </body>
 
 </html>
