@@ -95,7 +95,9 @@ if (isset($_POST["register"])) {
             <table>
                 <tr>
                     <td class="user-label"><label for="user-name">名前</label></td>
-                    <td class="user-data"><input type="text" id="user-name" name="user-name" placeholder="名前を入力してください"></td>
+                    <td class="user-data"><input type="text" id="user-name" name="user-name" placeholder="名前を入力してください" v-model="userName">
+                    <p v-if="isName" v-bind:style="danger">※名前{{errorMessage}}</p>                
+                </td>
                 </tr>
                 <tr>
                     <td class="user-label"><label for="e-mail">メールアドレス</label></td>
@@ -115,7 +117,7 @@ if (isset($_POST["register"])) {
                     </td>
                 </tr>
             </table>
-            <button class="btn-flat-border" name="register" type="submit">入力内容の確認画面へ</button>
+            <button class="btn-flat-border" name="register" type="submit" v-on:click="checkError">入力内容の確認画面へ</button>
         </form>
         <div>
             <br><br>
