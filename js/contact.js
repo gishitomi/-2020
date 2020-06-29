@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         userName: '',
         Email: '',
+        checkEmail: '',
         contact: '',
         errorCounters: 0,
         message: 'テストよう',
@@ -16,24 +17,27 @@ var app = new Vue({
     },
     methods: {
         checkError: function(event) {
-            // if (this.userName === '' || this.Email === '' || this.contact === '') {
-            //     this.errorCounters = 1
-            //     this.isName = true
-            //     this.isEmail = true
-            //     this.isContact = true
-            // }
             if (this.userName === '') {
                 this.errorCounters++
                     this.isName = true
             } else {
                 this.isName = false
             }
+            if (this.Email === '') {
+                this.errorCounters++
+                    this.isEmail = true
+            } else {
+                this.isEmail = false
+            }
+            if (this.contact === '') {
+                this.errorCounters++
+                    this.isContact = true
+            } else {
+                this.isContact = false
+            }
             if (this.errorCounters > 0) {
                 window.alert('エラーは' + this.errorCounters + '個')
                 event.preventDefault()
-
-
-
             }
         }
     }

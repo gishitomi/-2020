@@ -31,6 +31,7 @@ if (isset($_POST["register"])) {
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/drawermenu.css">
     <link rel="stylesheet" href="./css/contact.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -102,18 +103,22 @@ if (isset($_POST["register"])) {
                 <tr>
                     <td class="user-label"><label for="e-mail">メールアドレス</label></td>
                     <td class="user-data">
-                        <input type="text" id="e-mail" name="e-mail" placeholder="例) abc@okinawa.co.jp">
-                        <br><br>
+                        <input type="text" id="e-mail" name="e-mail" placeholder="例) abc@okinawa.co.jp" v-model="Email">
+                        <br>
+                        <p v-if="isEmail" v-bind:style="danger">※メールアドレス{{errorMessage}}</p>   
+                        <br>
                         <p>
                             ▼確認のため、再度メールアドレスの入力をお願いいたします。
                         </p>
-                        <input type="text" id="e-mail" name="e-mail" placeholder="例) abc@okinawa.co.jp">
+                        <input type="text" id="e-mail" name="e-mail" placeholder="例) abc@okinawa.co.jp" v-model="checkEmail">
+                        <p v-if="checkEmail !== Email" v-bind:style="danger">メールアドレスが一致しません。</p>
                     </td>
                 </tr>
                 <tr>
                     <td class="user-label"><label for="message">お問い合わせ内容</label></td>
                     <td class="user-data">
-                        <textarea name="message" id="message" cols="70" rows="10"></textarea>
+                        <textarea name="message" id="message" cols="70" rows="10" v-model="contact"></textarea>
+                        <p v-if="isContact" v-bind:style="danger">※お問い合わせ内容{{errorMessage}}</p>   
                     </td>
                 </tr>
             </table>
