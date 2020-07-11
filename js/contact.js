@@ -39,6 +39,8 @@ var app = new Vue({
                 window.alert('エラーは' + this.errorCounters + '個')
                 event.preventDefault()
             }
+            // エラー数をリセット
+            this.errorCounters = 0
         }
     }
 })

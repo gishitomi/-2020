@@ -55,9 +55,9 @@
         <nav class="side-menu">
             <ul>
                 <li id="side-guide">エリア別で見る<br>オススメ観光スポット</li>
-                <li><a href="north.html">北部</a></li>
-                <li><a href="center.html">中部</a></li>
-                <li><a href="south.html">南部</a></li>
+                <li><a href="north.php">北部</a></li>
+                <li><a href="center.php">中部</a></li>
+                <li><a href="south.php">南部</a></li>
             </ul>
         </nav>
         <footer>

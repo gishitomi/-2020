@@ -25,7 +25,7 @@
                         </div>
                     </a>
                     <div class="top-page">
-                        <a href="./index.html">
+                        <a href="./index.php">
                             <p>地元民が選ぶ</p>
                             <h1>オススメスポット</h1>
                             <p>沖縄の紹介サイト</p>
@@ -33,10 +33,10 @@
                     </div>
                 </div>
                 <ul class="header-list">
-                    <li v-bind:class="border"><a href="./index.html">TOP</a></li>
-                    <li v-bind:class="border"><a href="./north.html">北部</a></li>
-                    <li v-bind:class="border"><a href="./center.html">中部</a></li>
-                    <li v-bind:class="border"><a href="./south.html">南部</a></li>
+                    <li v-bind:class="border"><a href="./index.php">TOP</a></li>
+                    <li v-bind:class="border"><a href="./north.php">北部</a></li>
+                    <li v-bind:class="border"><a href="./center.php">中部</a></li>
+                    <li v-bind:class="border"><a href="./south.php">南部</a></li>
                     <li v-bind:class="border"><a href="./contact.php">お問い合わせ</a></li>
                 </ul>
                 <p v-bind:class="text" v-if="time >= 18">

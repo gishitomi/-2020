@@ -1,4 +1,13 @@
-<?php require_once('function.php'); ?>
+<?php
+require_once('function.php');
+//名前を保持
+$user_name = $_POST['user-name'];
+//メールアドレス
+$e_mail = $_POST['e-mail'];
+//お問い合わせ内容
+$message = $_POST['message'];
+require_once('function.php');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -77,16 +86,17 @@
             <table>
                 <tr>
                     <td class="user-label"><label for="user-name">名前</label></td>
-                    <td class="user-data"><input type="text" id="user-name" name="user-name" placeholder="名前を入力してください" v-model="userName">
-                    <p v-if="isName" v-bind:style="danger">※名前{{errorMessage}}</p>                
-                </td>
+                    <td class="user-data"><input type="text" id="user-name" name="user-name" placeholder="名前を入力してください" v-bind="userName" value="<?php echo $user_name; ?>">
+                        <p v-if="isName" v-bind:style="danger">※名前{{errorMessage}}</p>
+                        <p><?php echo $user_name; ?></p>
+                    </td>
                 </tr>
                 <tr>
                     <td class="user-label"><label for="e-mail">メールアドレス</label></td>
                     <td class="user-data">
                         <input type="text" id="e-mail" name="e-mail" placeholder="例) abc@okinawa.co.jp" v-model="Email">
                         <br>
-                        <p v-if="isEmail" v-bind:style="danger">※メールアドレス{{errorMessage}}</p>   
+                        <p v-if="isEmail" v-bind:style="danger">※メールアドレス{{errorMessage}}</p>
                         <br>
                         <p>
                             ▼確認のため、再度メールアドレスの入力をお願いいたします。
@@ -99,7 +109,7 @@
                     <td class="user-label"><label for="message">お問い合わせ内容</label></td>
                     <td class="user-data">
                         <textarea name="message" id="message" cols="70" rows="10" v-model="contact"></textarea>
-                        <p v-if="isContact" v-bind:style="danger">※お問い合わせ内容{{errorMessage}}</p>   
+                        <p v-if="isContact" v-bind:style="danger">※お問い合わせ内容{{errorMessage}}</p>
                     </td>
                 </tr>
             </table>
